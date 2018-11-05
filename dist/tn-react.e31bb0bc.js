@@ -104,9 +104,69 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   // Override the current require with this new one
   return newRequire;
-})({"index.js":[function(require,module,exports) {
+})({"src/Calc.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Calculator =
+/*#__PURE__*/
+function () {
+  function Calculator() {
+    _classCallCheck(this, Calculator);
+  }
+
+  _createClass(Calculator, [{
+    key: "minus",
+    value: function minus(x, y) {
+      return x - y;
+    }
+  }, {
+    key: "plus",
+    value: function plus(x, y) {
+      return x + y;
+    }
+  }, {
+    key: "multiply",
+    value: function multiply(x, y) {
+      return x * y;
+    }
+  }, {
+    key: "devide",
+    value: function devide(x, y) {
+      return x / y;
+    }
+  }]);
+
+  return Calculator;
+}();
+
+exports.default = Calculator;
+},{}],"index.js":[function(require,module,exports) {
+"use strict";
+
+var _Calc = _interopRequireDefault(require("~/src/Calc"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 console.log('Hello World!');
-},{}],"../../.nvm/versions/node/v9.11.2/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var x = 8;
+var y = 4;
+var calc = new _Calc.default();
+console.log("".concat(x, " + ").concat(y, " = ").concat(calc.plus(x, y)));
+console.log("".concat(x, " - ").concat(y, " = ").concat(calc.minus(x, y)));
+console.log("".concat(x, " * ").concat(y, " = ").concat(calc.multiply(x, y)));
+console.log("".concat(x, " / ").concat(y, " = ").concat(calc.devide(x, y)));
+},{"~/src/Calc":"src/Calc.js"}],"../../.nvm/versions/node/v9.11.2/lib/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -133,7 +193,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60000" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63344" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
