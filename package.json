@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/Puzinok/tn-react#readme",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "@babel/preset-react": "^7.0.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
@@ -32,6 +34,7 @@
   },
   "dependencies": {
     "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-react-app": "^3.0.5",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "src": "^1.1.2"
