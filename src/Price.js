@@ -1,9 +1,7 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-class Price extends Component{
-  render() {
-    return(<strong>{ `${this.props.price} руб.`}</strong>)
-  }
+const Price = (props) => {
+  return <strong>{ `${props.price} руб.`}</strong>;
 }
 
 export default Price;

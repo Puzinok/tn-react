@@ -5,15 +5,15 @@ import Price from './Price'
 
 class ProductCard extends Component {
   render () {
-    const { product } = this.props
+    const { imageUrl, title, price } = this.props.product
     return (
       <tr>
-        <td><Image imageUrl = { product.imageUrl }
-        alt = { product.title }
+        <td><Image imageUrl = { imageUrl }
+        alt = { title }
         width = '100'
         height = '100' /></td>
-        <td><TextBox description = { product.title } /></td>
-        <td><Price price = '10'/></td>
+        <td><TextBox description = { title } /></td>
+        <td><Price price = { price }/></td>
       </tr>
     );
   }

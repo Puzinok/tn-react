@@ -1,9 +1,7 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-class TextBox extends Component {
-  render () {
-    return (<span>{`Купить лучший ${this.props.description}`}</span>)
-  }
+const TextBox = (props) => {
+  return <span>{`Купить лучший ${props.description}`}</span>;
 }
 
 export default TextBox;
