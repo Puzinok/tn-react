@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class Image extends Component{
+class Image extends Component {
   render () {
-    const { imageUrl, width, height, alt } = this.props
-    return(
+    const {imageUrl, width, height, alt} = this.props;
+    return (
       <img
         src = { imageUrl }
         width = { width }
@@ -14,4 +15,11 @@ class Image extends Component{
   }
 }
 
-export default Image
+Image.propTypes = {
+  imageUrl: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  alt: PropTypes.string
+};
+
+export default Image;
