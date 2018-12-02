@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
-import MainPage from '~/src/components/views/MainPage';
+import Catalog from './src/components/views/Catalog';
 import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
-  <MainPage />, 
+  <Catalog />, 
   document.getElementById('root')
 );

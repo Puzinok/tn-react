@@ -2,26 +2,28 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from 'reactstrap';
 
 import Header from './Header';
-import ProductCard from '~/src/components/views/ProductCard';
 import '~/src/main.css'
+import ProductsCatalog from '../../../containers/ProductsCatalog';
+import products from '../../../../constants/products.js';
 
-class MainPage extends Component {
+
+class Catalog extends Component {
   render() {
     return (
       <Container>
         <Row>
-          <Col><Header /></Col>
+          <Col>
+            <Header />
+          </Col>
         </Row>
         <Row className='mt-3'>
-          <Col><ProductCard /></Col>
-          <Col><ProductCard /></Col>
-          <Col><ProductCard /></Col>
+          <ProductsCatalog products={products}/>
         </Row>
         <Row>
           <Col>
-            <div className='footer mt-3'>
+            <footer className='footer mt-3'>
               <p>Pavel Puzin, Thinknetika React 2018</p>
-            </div>
+            </footer>
           </Col>
         </Row>
       </Container>
@@ -29,4 +31,4 @@ class MainPage extends Component {
   }
 }
 
-export default MainPage;
+export default Catalog;
