@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
-import { ShoppingCart } from '@material-ui/icons';
 import {
   DropdownMenu,
   DropdownItem,
   UncontrolledDropdown,
-  DropdownToggle,
-  Badge } from 'reactstrap';
-import CartItem from './CartItem';
+  DropdownToggle} from 'reactstrap';
+
+import CartContext from '~/src/containers/CartContext'
+import CartItemsList from '~/src/containers/CartItemsList';
+import CartIcon from './CartIcon';
+
 
 class Cart extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <UncontrolledDropdown nav inNavbar>
         <DropdownToggle nav caret>
-          <ShoppingCart />
-          <Badge color="primary">4</Badge>
+          <CartContext.Consumer>
+            {(context) => (
+              <CartIcon quantity={context.quantity} />
+            )}
+          </CartContext.Consumer>
         </DropdownToggle>
         <DropdownMenu right>
           <DropdownItem>
-            <CartItem />
-          </DropdownItem>
-          <DropdownItem divider />
-          <DropdownItem>
-            Всего
+            <CartContext.Consumer>
+              {(context) => (
+                <React.Fragment>
+                  <CartItemsList products={context.inCart} />
+                </React.Fragment>
+              )}
+            </CartContext.Consumer>
           </DropdownItem>
         </DropdownMenu>
       </UncontrolledDropdown>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Table } from 'reactstrap';
+import Price from '~/src/components/views/ProductCard/Price'
 
 const CartItem = (props) => {
   return (
@@ -7,18 +9,22 @@ const CartItem = (props) => {
       <tbody>
         <tr>
           <td>
-            Наименование
+            {props.product.title}
           </td>
           <td>
-            10 шт.
+            {props.product.quantity} шт.
           </td>
           <td>
-            300 руб.
+            <Price value={props.product.price} />
           </td>
         </tr>
       </tbody>
     </Table>
   );
+};
+
+CartItem.PropTypes = {
+  product: PropTypes.object.isRequired
 };
 
 export default CartItem;

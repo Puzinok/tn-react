@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Card, CardText, CardBody,
-  CardTitle, CardSubtitle, Button } from 'reactstrap';
+  CardTitle, CardSubtitle } from 'reactstrap';
+
 import Image from './Image';
 import Price from './Price';
 import CardInput from './CardInput';
-import PropTypes from 'prop-types';
+
 
 class ProductCard extends Component {
   constructor(props) {
@@ -12,7 +14,7 @@ class ProductCard extends Component {
   }
 
   render() {
-    const { title, price, imageUrl, description} = this.props.product;
+    const { id, title, price, imageUrl, description} = this.props.product;
     
     return (
       <Card>
@@ -20,10 +22,10 @@ class ProductCard extends Component {
         <CardBody>
           <CardTitle>{title}</CardTitle>
           <CardSubtitle>
-            <Price price={price} />
+            <Price value={price} />
           </CardSubtitle>
           <CardText>{description}</CardText>
-          <CardInput />
+          <CardInput id={id}/>
         </CardBody>
       </Card>
     );
@@ -33,6 +35,5 @@ class ProductCard extends Component {
 ProductCard.propTypes = {
   product: PropTypes.object.isRequired
 };
-
 
 export default ProductCard;
