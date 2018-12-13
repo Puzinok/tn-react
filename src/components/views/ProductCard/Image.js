@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
+import { CardImg } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 class Image extends Component {
   render () {
-    const {imageUrl, width, height, alt} = this.props;
+    const {src, width, height, alt} = this.props.image;
     return (
-      <img
-        src = { imageUrl }
-        width = { width }
-        height = { height }
-        alt = { alt }
-      ></img>
+      <CardImg top width={width} height={height} src={src} alt={alt} />
     );
   }
 }

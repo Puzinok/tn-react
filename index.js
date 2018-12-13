@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import ReactDom from 'react-dom';
-import products from '~/constants/products.js'
-import Catalog from '~/src/Catalog'
+import React, { Fragment } from 'react';
+import ReactDOM from 'react-dom';
+import Catalog from './src/components/views/Catalog';
+import 'bootstrap/dist/css/bootstrap.css';
 
-ReactDom.render(
-  <Catalog products = { products } />,
+ReactDOM.render(
+  <Catalog />, 
   document.getElementById('root')
 );
