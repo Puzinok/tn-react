@@ -3,17 +3,26 @@ import PropTypes from 'prop-types';
 
 import CartItem from '~/src/components/views/Catalog/Header/Cart/CartItem';
 
-const CartItemsList = (props) => {
-  return (
-    props.products.map((product) => (
-      <CartItem product={product} key={product.id} />
-    ))
-  );
-};
 
-CartItemsList.PropTypes = {
+class CartItemsList extends Component {
+
+  createProductsList() {
+    const { products } = this.props;
+    const productList = [];
+
+    for (let product in products) { 
+      productList.push(<CartItem product={products[product]} key={product} />);
+    }
+    return productList;
+  }
+
+  render() {
+    return this.createProductsList();
+  }
+}
+
+CartItemsList.propTypes = {
   product: PropTypes.object
 };
-
 
 export default CartItemsList;

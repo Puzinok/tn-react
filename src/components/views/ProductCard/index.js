@@ -14,7 +14,7 @@ class ProductCard extends Component {
   }
 
   render() {
-    const { id, title, price, imageUrl, description} = this.props.product;
+    const { title, price, imageUrl, description} = this.props.product;
     
     return (
       <Card>
@@ -25,7 +25,7 @@ class ProductCard extends Component {
             <Price value={price} />
           </CardSubtitle>
           <CardText>{description}</CardText>
-          <CardInput id={id}/>
+          <CardInput product={this.props}/>
         </CardBody>
       </Card>
     );
@@ -33,7 +33,12 @@ class ProductCard extends Component {
 }
 
 ProductCard.propTypes = {
-  product: PropTypes.object.isRequired
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired })
 };
 
 export default ProductCard;

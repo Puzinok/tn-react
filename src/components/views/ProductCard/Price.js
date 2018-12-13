@@ -5,7 +5,7 @@ const Price = (props) => {
   return <strong>{props.value} руб.</strong>;
 };
 
-Price.PropTypes = {
+Price.propTypes = {
   value: PropTypes.number
 };
 

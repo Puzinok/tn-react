@@ -3,30 +3,23 @@ import PropTypes from 'prop-types';
 import { Col } from 'reactstrap';
 
 import ProductCard from '~/src/components/views/ProductCard';
+import { addDescription } from '~/src/components/helpers/AddDescription';
 
 class ProductsCatalog extends Component {
-
-  addDescription(product) {
-    const description = ['Великолепный', 'Чудный', 'Замечательный', 'Лучший'];
-    const randDescription = description[Math.floor(Math.random() * description.length)];
-    product['description'] = `${randDescription} ${product.title}`;
-    return product;
-  }
-
   render() {
     const {products} = this.props;
     return (
       products.map((product) => (
         <Col key={product.id}>
-          <ProductCard product={this.addDescription(product)}/>
+          <ProductCard product={addDescription(product)}/>
         </Col>
       ))   
     );
   }
 }
 
-ProductsCatalog.PropTypes = {
-  products: PropTypes.object
+ProductsCatalog.propTypes = {
+  products: PropTypes.array
 };
 
 export default ProductsCatalog;

@@ -4,18 +4,20 @@ import { Table } from 'reactstrap';
 import Price from '~/src/components/views/ProductCard/Price'
 
 const CartItem = (props) => {
+  const { title, quantity, price } = props.product;
+
   return (
     <Table size="sm">
       <tbody>
         <tr>
           <td>
-            {props.product.title}
+            {title}
           </td>
           <td>
-            {props.product.quantity} шт.
+            {quantity} шт.
           </td>
           <td>
-            <Price value={props.product.price} />
+            <Price value={price} />
           </td>
         </tr>
       </tbody>
@@ -23,8 +25,12 @@ const CartItem = (props) => {
   );
 };
 
-CartItem.PropTypes = {
-  product: PropTypes.object.isRequired
+CartItem.propTypes = {
+  product: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    quantity: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired
+  })
 };
 
 export default CartItem;

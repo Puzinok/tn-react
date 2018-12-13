@@ -17,7 +17,7 @@ class CardInput extends Component {
   }
 
   render() {
-    const {id} = this.props;
+    const {product} = this.props.product;
     return (
       <InputGroup>
         <Input value={this.state.quantity} onChange={this.handleChange} />
@@ -25,7 +25,7 @@ class CardInput extends Component {
           <CartContext.Consumer>
             {(context) => (
               <Button color="secondary" onClick={() => (
-                context.addToCart(id, this.state.quantity)
+                context.addToCart(product, this.state.quantity)
               )}>Купить</Button>
             )}
           </CartContext.Consumer>
@@ -35,8 +35,8 @@ class CardInput extends Component {
   }
 }
 
-CardInput.PropTypes = {
-  id: PropTypes.number
+CardInput.propTypes = {
+  product: PropTypes.object
 };
 
 export default CardInput;
