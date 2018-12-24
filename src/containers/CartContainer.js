@@ -32,7 +32,7 @@ class CartContainer extends Component {
   render() {
     return (
       <CartContext.Provider value={{
-        addToCart: (product, quantity) => this.addToCart(product, quantity), // <----
+        addToCart: (product, quantity) => this.addToCart(product, quantity),
         quantity: this.quantity(),
         inCart: this.state.itemsList }
       }>

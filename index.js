@@ -25,10 +25,10 @@ const App = () => (
       <Container>
         <CartContainer>
           <Header />
+          <Switch> 
+            { routes.map((route) => RoutesWithSubroutes(route)) }
+          </Switch> 
         </CartContainer>
-        <Switch> 
-          { routes.map((route) => RoutesWithSubroutes(route)) }
-        </Switch> 
       </Container>
       <Footer />
     </Fragment> 
