@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Col } from 'reactstrap';
 
-import ProductCard from '~/src/components/views/ProductCard';
-import { addDescription } from '~/src/components/helpers/AddDescription';
+import ProductCard from '~/src/components/views/Catalog/ProductCard';
+import { addDescription } from '~/src/helpers/AddDescription';
 
 class ProductsCatalog extends Component {
   render() {

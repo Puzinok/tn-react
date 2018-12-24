@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import CartItem from '~/src/components/views/Catalog/Header/Cart/CartItem';
+import CartItem from '~/src/components/views/shared/Header/Cart/CartItem';
 
 
 class CartItemsList extends Component {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Table } from 'reactstrap';
-import Price from '~/src/components/views/ProductCard/Price'
+import Price from '~/src/components/views/Catalog/ProductCard/Price';
 
 const CartItem = (props) => {
   const { title, quantity, price } = props.product;
